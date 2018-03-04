@@ -1,0 +1,41 @@
+spring.profiles.active: DEV
+
+---
+spring:
+  profiles: DEV
+  datasource:
+    url: jdbc:mysql://localhost:3306/bolao_db
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+server:
+  address: localhost
+  port: 8080
+
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.marotta.rhemunerar: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql: TRACE
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file: /rhemunerar/log/mylog.log 
+ 
+  
+
+---
+spring:
+  profiles: PRD
+  datasource:
+    url: jdbc:mysql://localhost/rhemunerar_db
+    username: rhemunerarp
+    password: rhemunerarp101
+    driver-class-name: com.mysql.jdbc.Driver
+    test-on-borrow: true
+
+server:
+  address: 172.31.20.14
+  port: 80
+

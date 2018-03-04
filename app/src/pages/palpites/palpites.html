@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar >
+    <ion-title>
+      Jogos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <!--<ion-list>
+    <ion-item-sliding *ngFor="let item of items | async">-->
+        <ion-grid>
+            <ion-row>
+               <ion-col>
+                <div><b>Data</b></div>
+              </ion-col>
+              <ion-col>
+                <div><b>Mandante</b></div>
+              </ion-col>
+              
+              <ion-col>
+                <div><b>Visitante</b></div>
+              </ion-col>
+
+            </ion-row>
+            
+            <ion-row *ngFor="let jogo of jogos">
+                <ion-col>
+                    {{jogo.data | date:'MM/dd'}}
+                </ion-col>
+                <ion-col>
+                    {{jogo.timeA}}
+                </ion-col>
+                
+              
+              <ion-col>
+                {{jogo.timeB}}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      <!--<ion-item>
+        {{ item.name }}
+        <button ion-button icon-only  (click)="editItem(item)"><ion-icon name="create"></ion-icon></button>
+        <button ion-button icon-only color="danger" (click)="removeItem(item)"><ion-icon name="trash"></ion-icon></button>
+      </ion-item>
+      
+    </ion-item-sliding>
+  </ion-list>-->
+
+  <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)="newPalpite()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>
